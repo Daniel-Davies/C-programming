@@ -1,0 +1,1 @@
+This was a simple program to start learning C- the aim of the project was to classify triangles into their seperate parts

@@ -1,0 +1,49 @@
+Triangle extrension overview
+---------
+Blackjack
+__________
+
+For this week's extension, i decided to make a simple "computer vs player" card game known as blackjack. Blackjack is a relatively straight forward game, in which players are
+given 2 cards initially, and play against each other to get the sum of the value of the cards as close to 21 as possible (but avoiding actually going above 21 and immeditately 
+forfeiting the game- know as "Busting"). After the 2 initial cards are given, players can choose whether to accept another card (up to a max of 5) or stick with what 
+they have. Cards have the following values:
+
+-King, Queen, Jack are worth 10
+-Number cards have their number as their value
+-An ace can be worth 1 or 11 points, whatever the player chooses, unless the sum of their cards would be over 21 if the ace is counted as 11, in which case it is counted as 1
+--------
+Program
+_______
+
+The program essentially works by first setting up a constantly repeating loop, which gives the player the chance to play as many games as possible (until player quits), in which the game is played. In the game, both players are dealt their
+cards, the computer makes it's decision on whether to take more cards, and then the user is given the opportunity to get extra cards, should they wish. 2 "hint" and "help"
+functions were also included for the newer players.
+
+An autotesting facility has also been included to test some of the important functions in the program. Essentially, the backbone of the program are the 3 main 
+functions that: generate a random number, assign this random number to a card value, and get the string representation of this random card. These were simple to autotest. 
+Autotesting also took place on 2 other important functions that are responsible for storing/ assigning values of cards to the user and computer. These are autotested by checking that the parameters passed to the functions are returning with the correct values.
+Other than these functions however, due to the nature of the program, the only way to fully test many of the functions was simply to play the game many 
+times and find out whether the functions performed their duty correctly in all possible cases. (Note- testing of the random number generator function was simply 
+done by printing out a list of the numbers it produces, because autotesting cannot be completed on a set of outputs that cant be predetermined).
+
+This is an interactive sort of game, and so required user input. It was attempted to keep the input as short and fast as possible, and so characters are used to input
+instructions to the program (e.g. 'y', 'n' for yes and no). The only error handling that really needed to take place was when asking the user whether they want to play again,
+since this needs a concrete response of yes or no. In other cases of invalid input, the user is simply asked the question and given the instructions again.
+
+----------------
+Assumptions/ misc.
+_________________
+
+-The subroutine that deals with giving the computer it's set of playing cards had to give the computer a good chance of winning the game, but without being 
+too complex as to make the player lose on most games. Therefore, after researching probabilities of winning the game online, it turned out that generally having a 
+value of 16 or above suggests you should not take another card, but having a value underneath this generally means you should take the risk of another card. 
+So this was built in to the check for the computer, to give it some sort of chance at winning the game.
+
+-Although this is a "casino" game, money has not been included, since this game was designed to be simple and fast to play for many types of user
+
+-Generally when playing blackjack, i have come across many rules as to who goes first. In this version, the player appears to go first (even though technically the computer has it's cards dealt first) and hence if the player goes bust, they lose the game. At this point it is irrelevant what cards the computer holds, since the player has lost the game.
+
+-It would have been possible to draw little cards in the terminal using a box of *s, but since the game is designed to be quick and easy to read/play, it was though that there was not much point
+
+-There are quite a lot of end-of-line comments in my code, as i find it useful when writing to help me keep track of what does what, but if they are indeed frowned upon, i will try not to use any in the following assignments
+

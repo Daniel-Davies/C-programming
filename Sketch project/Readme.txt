@@ -1,0 +1,1 @@
+The aim of the Sketch project was to draw images given a list of operands and opcodes

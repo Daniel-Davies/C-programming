@@ -1,0 +1,1 @@
+The idea behind this project was to further undertsanding of C with a game of noughts and crosses
